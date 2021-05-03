@@ -1,6 +1,75 @@
 var coord = "-22.0;14.0";
 var austin = "30.3;-97.6";
+var cities = [];
+var lastSearch = "";
 var list = document.querySelector("#theater-list");
+var config = {
+	key:"72ec3ec64dmsh3a185f201e13e83p1fff16jsn8100cc7ea96c",
+    url: "yahoo-weather5.p.rapidapi.com"
+}
+var saveCities = function() {
+    localStorage.setItem("cities", JSON.stringify(cities));
+    localStorage.setItem("lastCity", JSON.stringify(lastSearch));
+  };
+
+  var loadCities = function() {
+    if(localStorage.getItem("cities") != null){
+    cities = JSON.parse(localStorage.getItem("cities")); 
+    cities.forEach(element => {
+        createButton(buttonsPlace,element);        
+    });
+    } 
+    else {
+        
+        cities.splice(0,cities.length);
+    }
+    lastSearch = JSON.parse(localStorage.getItem("lastCity"));
+};
+
+var sameCityDetector = function (city){
+    var push = true;
+    if(cities){
+        if(cities.length>0){
+         cities.forEach(element => {
+            if(city === element){
+                push = false;
+            }
+                       
+        });
+      }
+    }
+    return push;
+} 
+var getCoordinates = function (city){
+    fetch("https://yahoo-weather5.p.rapidapi.com/weather?location="+ city +"&format=json&u=f", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": config.key,
+            "x-rapidapi-host": config.url
+        }
+    })
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        cityTarget = response.location.city;
+        var okPush = sameCityDetector(cityTarget);
+        
+        if(okPush){
+             cities.push(cityTarget);
+                             
+        }
+        lastSearch = cityTarget;
+        saveCities();
+        var lat = response.location.lat;
+        var long = response.location.long;
+        var coord = lat + ";" + long;
+        console.log(coord);
+       // getCinemas(coord);
+    })
+    .catch(err => {
+        console.error(err);
+    });
+    }
 
 var createCards = function(arrayElement){
     var cardEl = document.createElement('div');
@@ -77,10 +146,28 @@ var settings = {
     });
 
 };
-getCinemas(coord);
+var buttonHandler = function(event){
+    var target = event.target;
+    console.log(target.type);
+    if(target.type === "button" || target.type === "submit"){
+    var city = document.getElementById("form").value;
+         if(city && target.id ==="search"){
+                getCoordinates(city);
+                }
+         if(!city && target.id === "search"){
+                alert("Please, type a name of a city");
+            }
+         if(target.type === "submit") {
+                getCoordinates(target.id);
+            }
+        }
+    else {
+        return null;
+    }
+}
+elemsSidenav = document.querySelectorAll(".sidenav");
+const instancesSidenav = M.Sidenav.init(elemsSidenav);
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-    instances.open();
-  });
+getCinemas(coord);
+getCoordinates("austin");
+
