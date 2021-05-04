@@ -1,7 +1,9 @@
+
 var coord = "-22.0;14.0";
 var austin = "30.3;-97.6";
 var cities = [];
 var lastSearch = "";
+var optionsPlace = document.getElementById("dropdown-options");
 var list = document.querySelector("#theater-list");
 var config = {
 	key:"72ec3ec64dmsh3a185f201e13e83p1fff16jsn8100cc7ea96c",
@@ -16,7 +18,7 @@ var saveCities = function() {
     if(localStorage.getItem("cities") != null){
     cities = JSON.parse(localStorage.getItem("cities")); 
     cities.forEach(element => {
-        createButton(buttonsPlace,element);        
+       createOption(optionsPlace,element);        
     });
     } 
     else {
@@ -64,10 +66,11 @@ var getCoordinates = function (city){
         var long = response.location.long;
         var coord = lat + ";" + long;
         console.log(coord);
-       // getCinemas(coord);
+        getCinemas(coord);
     })
     .catch(err => {
         console.error(err);
+        window.location.href = "error.html";
     });
     }
 
@@ -118,6 +121,16 @@ var createCards = function(arrayElement){
 
 }
 
+var createOption = function(optionsPlace, city) {
+    var button = document.createElement('button');
+    button.className = "hide-button";
+    var opt = document.createElement('li');
+    button.innerHTML = city;
+    opt.appendChild(button);
+    optionsPlace.appendChild(opt);
+
+};
+
 var getCinemas = function(coord){
 var settings = {
     "url": "https://api-gate2.movieglu.com/cinemasNearby/?n=10",
@@ -143,8 +156,12 @@ var settings = {
       
     console.log(response);
        
-    });
+    })
+    .catch(err => {
+        console.error(err);
+        window.location.href = "error.html";
 
+    })
 };
 var buttonHandler = function(event){
     var target = event.target;
@@ -155,10 +172,10 @@ var buttonHandler = function(event){
                 getCoordinates(city);
                 }
          if(!city && target.id === "search"){
-                alert("Please, type a name of a city");
+            window.location.href = "error.html";
             }
-         if(target.type === "submit") {
-                getCoordinates(target.id);
+         if(target.type === "submit" && target.id != "drop") {
+              getCoordinates(target.textContent);
             }
         }
     else {
@@ -168,6 +185,12 @@ var buttonHandler = function(event){
 elemsSidenav = document.querySelectorAll(".sidenav");
 const instancesSidenav = M.Sidenav.init(elemsSidenav);
 
-getCinemas(coord);
-getCoordinates("austin");
+const elemsDropdown = document.querySelectorAll(".dropdown-trigger");
+const instancesDropdown = M.Dropdown.init(elemsDropdown, {
+    coverTrigger: false
+});
+loadCities();
+addEventListener("click", buttonHandler);
+
+
 

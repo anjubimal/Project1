@@ -21,7 +21,7 @@
                     <li><a href="trending.html">Trending Movies</a></li>
                     <li><a href="genre.html">Movies by Genre</a></li>
                     <li><a href="theaters.html">Theaters Nearby</a></li>
-                    <li><a href="comingSoon.html">Coming Soon</a></li>
+                    <li><a href="upcoming.html">Coming Soon</a></li>
                   </ul>
                 </nav>
               </div>
@@ -39,7 +39,16 @@
                     <form>
                         <label for="City">Type a City:</label>
                         <input  id="form" type="text" placeholder="City" name="city" id="city" />
-                    </form>
+                   </form>
+                   <div class="d-grid gap-2 search">
+                      <button id="search" class="btn btn-secondary btn-lg" type="button">Search</button>
+                    </div>
+                </div>
+                <div class="hero-form">
+                  <button id="drop" class="dropdown-trigger btn btn-secondary" data-target="dropdown-options">Last Searches <i class="material-icons rigth">arrow_drop_down</i></button>
+                  <ul id="dropdown-options" class="dropdown-content">
+                    
+                  </ul>
                 </div>
                 <div id="theater-list" class="hero">
                 </div>
