@@ -7,6 +7,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 
 
+
 const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
@@ -14,6 +15,7 @@ const prev = document.getElementById('prev');
 const current = document.getElementById('curr');
 const next = document.getElementById('next');
 const containerEl = document.getElementById('movie');
+const bodyEl = document.getElementById('body');
 
 var lastUrl = '';
 
@@ -52,15 +54,16 @@ function getMovies(url) {
 function showMovies(data) {
     main.innerHTML = "";
     data.forEach(movie => {
-        const { title, poster_path, vote_average, id } = movie;
+        const { title, poster_path, vote_average, id,overview } = movie;
         const movieEl = document.createElement('div');
+        // <div class="desc">${overview}</div>
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
-            <img src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" alt="${title}">
+            <img class="zoom" src="${poster_path ? IMG_URL + poster_path : "http://via.placeholder.com/1080x1580"}" alt="${title}">
             <div class="movie-info">
-                <h3>${title}</h3>
+                <p>${title}</p>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
-                <a onclick="overview('${id}')" class="btn btn-primary" href="#">Movie Details</a>
+                <a onclick="overview('${id}')" href="#" id="trailer">Details</a>
             </div>
         `
         main.appendChild(movieEl);
@@ -69,7 +72,6 @@ function showMovies(data) {
     });
 
 }
-
 
 function overview(id) {
     sessionStorage.setItem('movieId', id);
@@ -83,24 +85,24 @@ function getMovie() {
     fetch(searchID).then(res => res.json()).then(data => {
         console.log(searchID);
         let movie = data.overview;
+        // bodyEl.style.backgroundImage = `"https://image.tmdb.org/t/p/w500${data.backdrop_path}"`
+        // <h3 class="release">Relase Date: ${data.release_date}</3 >
         const output = document.createElement('div');
         output.classList.add('movie');
         output.innerHTML = `
-        <h1>${data.title}</h1>
-        <h3>Relase Date: ${data.release_date}</3>
-        <img src="https://image.tmdb.org/t/p/w500${data.backdrop_path}" alt="${data.title}">
-        <p>${movie}</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/${data.videos.results.key}" frameborder="0" ></iframe>
+        <h1 class="movieTitle">${data.title}</h1>
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="${data.title}">
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/${data.videos.results.key}" frameborder="0" ></iframe>
+        <p class="description">${movie}</p>
+        
         `
+
 
         containerEl.appendChild(output)
 
 
     })
 }
-
-
-
 
 
 

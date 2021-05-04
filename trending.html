@@ -5,15 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assests_trending/trending_css/trending.css">
     <title>Movie App</title>
 </head>
+<header>
+    <div class="nav-wrapper">
+        <nav class="grey darken-4">
+            <a href="index.html" class="brand-logo">Top Movies</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="trending.html">Trending Movies</a></li>
+                <li><a href="genre.html">Movies by Genre</a></li>
+                <li><a href="theaters.html">Theaters Nearby</a></li>
+                <li><a href="comingSoon.html">Coming Soon</a></li>
+            </ul>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trending.html">Trending Movies</a></li>
+        <li><a href="genre.html">Movies by Genre</a></li>
+        <li><a href="theaters.html">Theaters Nearby</a></li>
+        <li><a href="comingSoon.html">Coming Soon</a></li>
+    </ul>
+</header>
 
 <body>
     <a href="movie.html"></a>
     <header>
         <form id="form">
-            <input type="text" placeholder="Search Movie" id="search" class=search>
+            <input type="text" placeholder=" Search Movie" id="search" class=search>
         </form>
     </header>
 
@@ -62,6 +84,7 @@
 
 
     <script src="assests_trending/trending_js/trending.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
