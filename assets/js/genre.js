@@ -5,8 +5,8 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const main = document.querySelector('#main');
 
 var pickedGenre = document.querySelector('#genres');
-/* Movie Genre IDs */
-/* 28 - Action
+/* Movie Genre IDs 
+28 - Action
 18 - Drama
 35 - Comedy 
 10751 - Family
@@ -42,21 +42,23 @@ function getMovieList(genreID) {
   var apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY 
                   + "&language=en-US&sort_by=popularity.desc&include_adult=true&with_genres=" + genreID;
   
-
   fetch(apiUrl)
     .then(function(response) {
       if (response.ok) {
-        response.json().then(function(data) {
-          const movies = data.results;
-          const movieBlock = displayMovieList(movies);
-          main.appendChild(movieBlock);
-        });
+        response.json().then(renderMovies);
       } else {
       }
     })
     .catch(function(error) {
     });
 };
+
+function renderMovies(data) {
+  main.innerHTML='';
+  const movies = data.results;
+  const movieBlock = displayMovieList(movies);
+  main.appendChild(movieBlock);
+}
 
 function movieSection(movies) {
   return movies.map((movie) => {
@@ -67,7 +69,6 @@ function movieSection(movies) {
     }
   }) 
 }
-
 
 function displayMovieList(movies) {
   const movieElement = document.createElement('div');
