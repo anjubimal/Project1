@@ -6,16 +6,17 @@
   
 
 .container{
-    background-image: url("../trending_images/cinema_2.jpg");
     padding-bottom: 20px;
+    background: linear-gradient( rgba(12, 0, 0, 0.5), rgba(14, 1, 29, 0.5) ), url('../trending_images/cinema_2.jpg');
+ 
 }
 
 
 h1{
     color: rgb(222, 217, 226);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 40px;
-    text-shadow: 2px 2px #140303;
+    font-size: 45px;
+    text-shadow: 2px 3px #030000;
     padding: 10px;
 }
 
@@ -46,8 +47,8 @@ img{
 
 
 .video{
-    opacity: 0.6;
-    border: darkblue;
+    opacity: 1.5;
+    border: #140303;
     border-radius: 25px;
     margin: 30px;
     padding: 20px;
