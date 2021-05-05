@@ -1,4 +1,5 @@
-
+var US_key = "Amjd4cZrEZ7bRMEna72hl81GBWhQXiaB5BN5EhRC";
+var US_authorization = "Basic VU5JVl80OTpxWXl1NTkxNzZ1enY=";
 var coord = "-22.0;14.0";
 var austin = "30.3;-97.6";
 var cities = [];
@@ -74,7 +75,7 @@ var getCoordinates = function (city){
     });
     }
 
-var createCards = function(arrayElement){
+var createCards = function(arrayElement, index){
     var cardEl = document.createElement('div');
     cardEl.className = "card";
     cardEl.classList.add("margin-card");
@@ -84,7 +85,7 @@ var createCards = function(arrayElement){
     imageEl.classList.add("waves-block");
     imageEl.classList.add("waves-light");
     var img = document.createElement('img'); 
-    img.src = 'C:/users/vikin/virginia_r/projects/Project1/assets/images/AMC_logo.jpg';
+    img.src = 'assets/images/cinema_logo.png' ;
     img.className = "actvator";
     imageEl.appendChild(img);
     var contentEl = document.createElement('div');
@@ -94,7 +95,7 @@ var createCards = function(arrayElement){
     contentSp.classList.add("activator");
     contentSp.classList.add("grey-text");
     contentSp.classList.add("text-darken-4");
-    contentSp.innerHTML = arrayElement.cinema_name + '<i class="material-icons right">more_vert</i>';
+    contentSp.innerHTML = "Cinema " + index + '<i class="material-icons right">more_vert</i>';
     contentEl.appendChild(contentSp);
     var revealEl = document.createElement('div');
     revealEl.className = "card-reveal";
@@ -127,11 +128,14 @@ var createOption = function(optionsPlace, city) {
     var opt = document.createElement('li');
     button.innerHTML = city;
     opt.appendChild(button);
+    if(optionsPlace != null){
     optionsPlace.appendChild(opt);
-
+    }
 };
 
-var getCinemas = function(coord){
+var date = new Date();
+
+var getCinemas = function(coord, date){
 var settings = {
     "url": "https://api-gate2.movieglu.com/cinemasNearby/?n=10",
     "method": "GET",
@@ -139,18 +143,18 @@ var settings = {
     "headers": {
     "geolocation":coord,
     "api-version": "v200",
-    "Authorization": "Basic VU5JVl80OV9YWDpvSktYWmt4c1RkaWg=",
+    "Authorization": US_authorization,
     "client": "UNIV_49",
-    "x-api-key": "z3JmDFRMGa1Wb0O9RsaI66csW8wG6L3N4aViIHdG",
-    "device-datetime": "2021-05-02T12:07:57.296Z",
-    "territory": "XX",
+    "x-api-key": US_key,
+    "device-datetime":  "2021-05-04T08:30:17.360Z",
+    "territory": "US",
     },
     };
     
     $.ajax(settings).done(function (response) {
 
         for(let i = 0; i < response.status.count; i++){
-            var movieCard = createCards(response.cinemas[i]);
+            var movieCard = createCards(response.cinemas[i], i+1);
             list.appendChild(movieCard);
         }
       
