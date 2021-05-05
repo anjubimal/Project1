@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+.container{
+    background-image: url("../trending_images/cinema_2.jpg");
+    padding-bottom: 20px;
+}
+
+
+h1{
+    color: rgb(222, 217, 226);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    text-shadow: 2px 2px #140303;
+    padding: 10px;
+}
+
+h3{
+    color: cornsilk;
+
+
+}
+
+p{
+    font-size: 20px;
+    border: cornsilk;
+    background-color: cornsilk;
+    color: rgb(231, 229, 238);
+    padding: 20px;
+    display: inline-block;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(22,18,24,1) 100%);
+}
+
+img{
+    width: 35%;
+    padding: 20px;
+    float: left;
+    opacity: 0.8;
+    margin-top: 30px;
+}
+
+
+.video{
+    opacity: 0.6;
+    border: darkblue;
+    border-radius: 25px;
+    margin: 30px;
+    padding: 20px;
+
+}
+
