@@ -5,8 +5,7 @@
   }
   
   body {
-    /* more on this crazy alphanumerical value in a minute! */
-    color: var(--tertiary-color);
+
     font-family: Helvetica, Arial, sans-serif;
   }
 
@@ -24,6 +23,7 @@
     flex-wrap: wrap;
     background-attachment: fixed;
     background-position: 80%;
+  
   }
 
   .hero-cta {
@@ -51,7 +51,7 @@
     width: 100%;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 15%;
+    margin-top: 5%;
     margin-bottom: 10%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);border-radius: 15px;
   }
@@ -104,6 +104,13 @@
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   }
 
+  .hide-button {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 50px;
+  }
+
 .list {
     display: inline-flex;
     height: 100%;
@@ -124,6 +131,21 @@
 
  }
 
+ .big-box {
+   margin: auto;
+   align-self: center;
+   width: 80%;
+   height: 500px;
+  text-align: center;
+
+ }
+
+ .big-box p {
+   margin-top: 105px;
+   padding: 20px;
+   
+ }
+
  .input {
      margin-left: 75px;
      margin-top:25px;
@@ -133,6 +155,7 @@
  }
 
  footer h5 {
+   height: 10%;
      font-size: 1.5vw;
   text-align: center;
    width: 100%;
