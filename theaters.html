@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="./assets/css/style.css" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Group7-Project1</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="nav-wrapper">
+                <nav class="grey darken-4">
+                  <a href="index.html" class="brand-logo">Top Movies</a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="trending.html">Trending Movies</a></li>
+                    <li><a href="genre.html">Movies by Genre</a></li>
+                    <li><a href="theaters.html">Theaters Nearby</a></li>
+                    <li><a href="upcoming.html">Coming Soon</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <ul class="sidenav" id="mobile-demo">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trending.html">Trending Movies</a></li>
+                <li><a href="genre.html">Movies by Genre</a></li>
+                <li><a href="theaters.html">Theaters Nearby</a></li>
+                <li><a href="comingSoon.html">Coming Soon</a></li>
+              </ul>
+        </header>
+        <section class="hero">
+                <div class="hero-form">
+                    <p>Here you can see theaters available nearby. Type the name of your city!</p><i class="material-icons small">arrow_downward</i>
+                    <form>
+                        <label for="City">Type a City:</label>
+                        <input  id="form" type="text" placeholder="City" name="city" id="city" />
+                   </form>
+                   <div class="d-grid gap-2 search">
+                      <button id="search" class="btn btn-secondary btn-lg" type="button">Search</button>
+                    </div>
+                </div>
+                <div class="hero-form">
+                  <button id="drop" class="dropdown-trigger btn btn-secondary" data-target="dropdown-options">Last Searches <i class="material-icons rigth">arrow_drop_down</i></button>
+                  <ul id="dropdown-options" class="dropdown-content">
+                    
+                  </ul>
+                </div>
+                <div id="theater-list" class="hero">
+                </div>
+          </section>    
+        <footer>
+            <h5>❤️ Made with love by Anju, Hugh, Roy and Virginia.</h5>
+          </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/js/theaters.js"></script>
+      </body>
+    </html>
