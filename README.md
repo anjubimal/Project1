@@ -1,2 +1,1 @@
 # Movie App
-## Genre Page
