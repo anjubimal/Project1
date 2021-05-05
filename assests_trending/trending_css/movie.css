@@ -21,15 +21,19 @@ h1{
 }
 
 h3{
-    color: cornsilk;
+    color: rgb(222, 217, 226);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    text-shadow: 2px 3px #030000;
+    padding: 5px;
+    margin-left: 10px;
+
 
 
 }
 
 p{
     font-size: 20px;
-    border: cornsilk;
-    background-color: cornsilk;
     color: rgb(231, 229, 238);
     padding: 20px;
     display: inline-block;

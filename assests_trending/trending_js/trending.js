@@ -86,12 +86,13 @@ function getMovie() {
         console.log(searchID);
         let movie = data.overview;
         // bodyEl.style.backgroundImage = `"https://image.tmdb.org/t/p/w500${data.backdrop_path}"`
-        // <h3 class="release">Relase Date: ${data.release_date}</3 >
+        // 
         const output = document.createElement('div');
         // 
         output.classList.add('movie');
         output.innerHTML = `
         <h1 class="movieTitle">${data.title}</h1>
+        <h3 class="release">Relase Date: ${data.release_date}</h3>
         <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="${data.title}">
         <iframe class="video" width="800" height="600" src="https://www.youtube.com/embed/${data.videos.results[0].key}" frameborder="0" <iframe width="560" height="315" src="https://www.youtube.com/embed/gClnj1aqc3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>></iframe>
         <p class="description">${movie}</p>
