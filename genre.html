@@ -35,39 +35,59 @@
     </section>
 
     <nav class="nav-wrapper grey darken-4">
-        <div class="container">
-            <ul>
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Drama</a></li>
-                <li><a href="#">Comedy</a></li>
-                <li><a href="#">Family</a></li>
-                <li><a href="#">Horror</a></li>
-                <li><a href="#">Romance</a></li>
-                <li><a href="#">Sci-Fi</a></li>
-                <li><a href="#">Animated</a></li>  
+        <div id="genres" class="container">
+            <ul id=genre-priority-list>
+                <li><a id="28">Action</a></li>
+                <li><a id="18">Drama</a></li>
+                <li><a id="35">Comedy</a></li>
+                <li><a id="10751">Family</a></li>
+                <li><a id="27">Horror</a></li>
+                <li><a id="10749">Romance</a></li>
+                <li><a id="878">Sci-Fi</a></li>
+                <li><a id="16">Animated</a></li>  
             </ul>
             <ul class="right">
-                <li><a href="#">More</a></li>
+                <li class="grey darken-4"><a class="dropdown-trigger" data-target="genre-others-list">More</a></li>
             </ul>
-        </div>  
-        
+
+            <ul id="genre-others-list" class="dropdown-content">
+                <li><a id="12">Adventure</a></li>
+                <li><a id="80">Crime</a></li>
+                <li><a id="36">History</a></li>
+                <li><a id="37">Western</a></li>
+                <li><a id="99">Documentary</a></li>
+            </ul>
+        </div> 
     </nav>
-<!--
-    <div class="genre-others">
-        <ul class="genre-others-list">
-            <li>Adventure</li>
-                <li>Crime</li>
-                <li>History</li>
-                <li>Western</li>
-                <li>Documentary</li>
-            </ul>
+
+    <main id="main">
+        <div class="movie">
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <button id="overview"></button>
+                <span class="green">9.8</span>
+            </div>
         </div>
-    </div>
--->
-    
+        
+        <div class="movie">
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <button id="overview"></button>
+                <span class="green">9.8</span>
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <button id="overview"></button>
+                <span class="green">9.8</span>
+            </div>
+        </div>
+    </main>
 
 
-
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/genre.js"></script>
