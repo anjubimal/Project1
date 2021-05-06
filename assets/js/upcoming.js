@@ -15,10 +15,10 @@ function getMovies(qURL) {
 			let output = '';
 			$.each(movies, (index, movie) => {
 				output += `
-			<div class="col-md-3">
-            	<div class="well text-center">
+			<div class="col-md-4">
+            	<div class="well ">
 						<img src="${IMG_URL}${movie.poster_path}">
-						<h5>${movie.title}</h5>
+						<h5 class="text-center">${movie.title}</h5>
 						<a onclick="movieSelected('${movie.id}')" class="btn btn-primary" href="#">Movie Details</a>
 					</div>
 				</div>
@@ -32,4 +32,8 @@ function getMovies(qURL) {
 
 		}
 		);
+}
+
+function movieSelected(id) {
+	// sessionStorage.setItem)
 }
