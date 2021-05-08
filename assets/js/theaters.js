@@ -1,9 +1,10 @@
 var US_key = "Amjd4cZrEZ7bRMEna72hl81GBWhQXiaB5BN5EhRC";
 var US_authorization = "Basic VU5JVl80OTpxWXl1NTkxNzZ1enY=";
-var coord = "-22.0;14.0";
-var austin = "30.3;-97.6";
+var sandbox_authorization = "Basic VU5JVl80OV9YWDpvSktYWmt4c1RkaWg=";
+var sandbox_key = "z3JmDFRMGa1Wb0O9RsaI66csW8wG6L3N4aViIHdG";
 var cities = [];
 var lastSearch = "";
+var revealPlace;
 var optionsPlace = document.getElementById("dropdown-options");
 var list = document.querySelector("#theater-list");
 var config = {
@@ -66,8 +67,7 @@ var getCoordinates = function (city){
         var lat = response.location.lat;
         var long = response.location.long;
         var coord = lat + ";" + long;
-        console.log(coord);
-        getCinemas(coord);
+        getCinemas(coord,date);
     })
     .catch(err => {
         console.error(err);
@@ -75,19 +75,28 @@ var getCoordinates = function (city){
     });
     }
 
-var createCards = function(arrayElement, index){
+var createCards = function(arrayElement){
+    var cardDiv = document.createElement('div');
     var cardEl = document.createElement('div');
     cardEl.className = "card";
+    cardEl.classList.add("small");
+    cardEl.classList.add("max-width");
     cardEl.classList.add("margin-card");
+    cardEl.classList.add("smaller");
     var imageEl = document.createElement('div');
     imageEl.className = "card-image";
     imageEl.classList.add("waves-effect");
     imageEl.classList.add("waves-block");
     imageEl.classList.add("waves-light");
     var img = document.createElement('img'); 
-    img.src = 'assets/images/cinema_logo.png' ;
+    img.src = 'assets/images/popcorn.jpg' ;
     img.className = "actvator";
+    var imgSpan = document.createElement('span');
+    imgSpan.className = "centered";
+    imgSpan.classList.add("card-text");
+    imgSpan.innerHTML = arrayElement.cinema_name;
     imageEl.appendChild(img);
+    imageEl.appendChild(imgSpan);
     var contentEl = document.createElement('div');
     contentEl.className = "class-content";
     var contentSp = document.createElement('span');
@@ -95,7 +104,7 @@ var createCards = function(arrayElement, index){
     contentSp.classList.add("activator");
     contentSp.classList.add("grey-text");
     contentSp.classList.add("text-darken-4");
-    contentSp.innerHTML = "Cinema " + index + '<i class="material-icons right">more_vert</i>';
+    contentSp.innerHTML = arrayElement.address + ", " + arrayElement.address2 + ". " + arrayElement.county + ". " + '<p>Movies <i class="material-icons center blue lighten-3">more_vert</i></p>';
     contentEl.appendChild(contentSp);
     var revealEl = document.createElement('div');
     revealEl.className = "card-reveal";
@@ -103,22 +112,17 @@ var createCards = function(arrayElement, index){
     revealSp.className = "card-title";
     revealSp.classList.add("grey-text");
     revealSp.classList.add("text-darken-4");
-    revealSp.innerHTML = arrayElement.cinema_name + '<i class="material-icons right">close</i>';
+    revealSp.innerHTML = "Movies Showing Today " + '<i class="material-icons right">close</i>';
     revealEl.appendChild(revealSp);
-    var revealP1 = document.createElement('p');
-    revealP1.innerHTML = "Address: " + arrayElement.address;
-    var revealP2 = document.createElement('p');
-    revealP2.innerHTML = "City: " + arrayElement.city;
-    var revealP3 = document.createElement('p');
-    revealP3.innerHTML = "County: " + arrayElement.county;
-    revealEl.appendChild(revealP1);
-    revealEl.appendChild(revealP2);
-    revealEl.appendChild(revealP3);
+    getCinemaShowTimes(date_format, arrayElement.cinema_id, revealEl);
+    
+    
     cardEl.appendChild(imageEl);
     cardEl.appendChild(contentEl);
     cardEl.appendChild(revealEl);
+    cardDiv.appendChild(cardEl);
 
-    return cardEl;
+    return cardDiv;
 
 }
 
@@ -133,9 +137,14 @@ var createOption = function(optionsPlace, city) {
     }
 };
 
-var date = new Date();
+var date = moment().format();
+console.log(date);
+var date_format = moment().format("YYYY-MM-DD");
+console.log(date_format);
 
 var getCinemas = function(coord, date){
+    console.log(date);
+    console.log(coord);
 var settings = {
     "url": "https://api-gate2.movieglu.com/cinemasNearby/?n=10",
     "method": "GET",
@@ -143,19 +152,19 @@ var settings = {
     "headers": {
     "geolocation":coord,
     "api-version": "v200",
-    "Authorization": US_authorization,
+    "Authorization": sandbox_authorization,
     "client": "UNIV_49",
-    "x-api-key": US_key,
-    "device-datetime":  "2021-05-04T08:30:17.360Z",
-    "territory": "US",
+    "x-api-key": sandbox_key,
+    "device-datetime":  date,
+    "territory": "XX",
     },
     };
     
     $.ajax(settings).done(function (response) {
-
+        $("#theater-list").empty(movieCard);
         for(let i = 0; i < response.status.count; i++){
-            var movieCard = createCards(response.cinemas[i], i+1);
-            list.appendChild(movieCard);
+            var movieCard = createCards(response.cinemas[i]);
+            $("#theater-list").append(movieCard);
         }
       
     console.log(response);
@@ -167,9 +176,44 @@ var settings = {
 
     })
 };
+
+var getCinemaShowTimes = function(date, cine_id, place){
+    var settings = {
+        "url": "https://api-gate2.movieglu.com/cinemaShowTimes/?cinema_id="+cine_id+"&date="+date_format,
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+        "api-version": "v200",
+        "Authorization": sandbox_authorization,
+        "client": "UNIV_49",
+        "x-api-key": sandbox_key,
+        "device-datetime":  date,
+        "territory": "XX",
+        },
+        };
+        
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            for(let i = 0; i < response.status.count; i++){
+                var revealP = document.createElement('p');
+                revealP.className = "grey-text";
+                revealP.innerHTML = response.films[i].film_name;
+                place.appendChild(revealP);
+                }
+                                        
+        })
+        .catch(err => {
+            console.error(err);
+            window.location.href = "error.html";
+    
+        })
+    };
+
+
+
 var buttonHandler = function(event){
     var target = event.target;
-    console.log(target.type);
+     console.log(target.type);
     if(target.type === "button" || target.type === "submit"){
     var city = document.getElementById("form").value;
          if(city && target.id ==="search"){
@@ -178,8 +222,11 @@ var buttonHandler = function(event){
          if(!city && target.id === "search"){
             window.location.href = "error.html";
             }
-         if(target.type === "submit" && target.id != "drop") {
+         if(target.type === "submit") {
+             if(target.id != "drop" && target.class === "hide-button"){
               getCoordinates(target.textContent);
+             }
+            
             }
         }
     else {
