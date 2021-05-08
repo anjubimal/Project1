@@ -22,8 +22,8 @@ Windhoek, Rundu, Walvis Bay, Oshakati, Swakopmund, Katima Mulilo, Grootfontein. 
 
 # Some screenshots:
 ![Main Page](https://github.com/anjubimal/Project1/blob/develop/assets/images/main-page.jpg)
-![Search Theaters Nearby](assets\images\theaters-search.jpg)
-![Theaters With cards opened](assets\images\theaters-openCards.jpg)
+![Search Theaters Nearby](https://github.com/anjubimal/Project1/blob/develop/assets/images/theaters-search.jpg)
+![Theaters With cards opened](https://github.com/anjubimal/Project1/blob/develop/assets/images/theaters-openCards.jpg)
 
 # Links:
 
