@@ -21,7 +21,7 @@ This is the Project 1 built by the group 7 and the rules are:
 Windhoek, Rundu, Walvis Bay, Oshakati, Swakopmund, Katima Mulilo, Grootfontein. Or any city of the Namibia region.
 
 # Some screenshots:
-![Main Page](assets\images\main-page.jpg)
+![Main Page](https://github.com/anjubimal/Project1/blob/develop/assets/images/main-page.jpg)
 ![Search Theaters Nearby](assets\images\theaters-search.jpg)
 ![Theaters With cards opened](assets\images\theaters-openCards.jpg)
 
