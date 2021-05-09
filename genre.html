@@ -12,11 +12,14 @@
 </head>
 
 <body>
-    
+
     <header>
         <nav>
             <div class="nav-wrapper grey darken-4">
                 <a href="index.html" class="brand-logo">The Movie HUB</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="trending.html">Trending Movies</a></li>
                     <li><a href="genre.html">Movies by Genre</a></li>
@@ -25,6 +28,13 @@
                 </ul>
             </div>
         </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trending.html">Trending Movies</a></li>
+            <li><a href="genre.html">Movies by Genre</a></li>
+            <li><a href="theaters.html">Theaters Nearby</a></li>
+            <li><a href="upcoming.html">Coming Soon</a></li>
+          </ul>
     </header>
 
     <section class="hero">
@@ -63,8 +73,10 @@
     <main id="main">
     </main>
 
+    <footer>
+        <h5>❤️ Made with love by Anju, Hugh, Roy and Virginia.</h5>
+    </footer>
 
-  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/genre.js"></script>

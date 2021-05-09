@@ -37,3 +37,6 @@ function getMovies(qURL) {
 function movieSelected(id) {
 	// sessionStorage.setItem)
 }
+
+const slide_menu = document.querySelector(".sidenav");
+M.Sidenav.init(slide_menu,{});

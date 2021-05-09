@@ -6,9 +6,9 @@
 
 body {
 	font-family: Helvetica, Arial, sans-serif;
-}
-
-
+	background: rgb(63,94,251);
+	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(22,18,24,1) 100%);
+  }
 
 .hero {
 	background: rgb(63,94,251);
@@ -82,11 +82,18 @@ div h5 {
 }
 
 footer h5 {
+	height: 10%;
 	font-size: 1.5vw;
 	text-align: center;
 	width: 100%;
-}
+	color: white;
+  }
 
+nav ul li a:hover {
+	color: white;
+    background-color: rgb(0, 76, 239);
+	text-decoration: none;
+  }
 
 #movies img,
 #movie img {

@@ -86,4 +86,7 @@ function displayMovieList(movies) {
       return movieElement;
 }
 
+const slide_menu = document.querySelector(".sidenav");
+M.Sidenav.init(slide_menu,{});
+
 pickedGenre.addEventListener("click", targetHandler);

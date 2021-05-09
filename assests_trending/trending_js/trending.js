@@ -162,6 +162,5 @@ function pageCall(page) {
 
 }
 
-
-
-
+const slide_menu = document.querySelector(".sidenav");
+M.Sidenav.init(slide_menu,{});

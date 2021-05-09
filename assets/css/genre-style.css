@@ -80,3 +80,11 @@ nav ul li a:hover {
   width: auto;
   margin: 2rem;
 }
+
+footer h5 {
+  height: 10%;
+  font-size: 1.5vw;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
