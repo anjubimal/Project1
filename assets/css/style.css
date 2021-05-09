@@ -13,6 +13,14 @@
     padding: 5%;
 }
 
+.logo {
+  position: center;
+  color: hsl(0deg 0% 100%);
+  display: inline-block;
+  font-size: 3vw;
+  padding: 0;
+}
+
 .hero {
     align-items: flex-start;
     background-image: url("../images/cinema_2.jpg");
@@ -48,12 +56,31 @@
     background-color: rgba(5, 56, 52, 0.8);
     padding: 20px;
     color:white;
-    width: 100%;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 5%;
-    margin-bottom: 10%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);border-radius: 15px;
+    margin-top: 5%;
+  }
+
+  .search-box {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 3px rgb(6, 6, 83);;
+    background-color: rgba(159, 192, 10, 0.5);
+    color:white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);border-radius: 15px;
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 10%;
+    border-style: dotted;
+  }
+
+  .max-width {
+    width: 300px;
   }
 
   .hero-form input {
@@ -88,9 +115,9 @@
       margin-bottom: 15%;
   }
 .margin-card {
-    margin-left: 35px;  
-    margin-right: 35px; 
-    margin-bottom: 65px; 
+    margin-left: 15px;  
+    margin-right: 15px; 
+    margin-bottom: 30px; 
 }
 .centered {
     color: white;
@@ -102,6 +129,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+
+  .card-text {
+    font-size: 1vw;
+    font-weight: normal;
   }
 
   .hide-button {
