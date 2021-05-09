@@ -10,6 +10,14 @@ body {
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(22,18,24,1) 100%);
 }
 
+.logo {
+  position: center;
+  color: hsl(0deg 0% 100%);
+  display: inline-block;
+  font-size: 3vw;
+  padding: 0;
+}
+
 .hero {
   align-items: flex-start;
   justify-content: center;
