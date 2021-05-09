@@ -26,6 +26,7 @@ Windhoek, Rundu, Walvis Bay, Oshakati, Swakopmund, Katima Mulilo, Grootfontein. 
 ![Theaters With cards opened](https://github.com/anjubimal/Project1/blob/develop/assets/images/theaters-openCards.jpg)
 <img width="1440" alt="Screen Shot 2021-05-08 at 8 14 30 PM" src="https://user-images.githubusercontent.com/43347674/117556760-4361b280-b03a-11eb-920c-308fdab8d731.png">
 <img width="1440" alt="Screen Shot 2021-05-08 at 8 14 48 PM" src="https://user-images.githubusercontent.com/43347674/117556761-452b7600-b03a-11eb-8dfd-07bda99f5788.png">
+<img width="1440" alt="Screen Shot 2021-05-08 at 8 24 24 PM" src="https://user-images.githubusercontent.com/43347674/117556868-76f10c80-b03b-11eb-8e94-83c2cc0be583.png">
 
 # Links:
 
