@@ -1,90 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="assests_trending/trending_css/trending.css">
-    <title>Trending Movies</title>
-</head>
-<header>
-    <div class="nav-wrapper">
-        <nav class="grey darken-4">
-            <a href="index.html" class="brand-logo">The Movie HUB</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="trending.html">Trending Movies</a></li>
-                <li><a href="genre.html">Movies by Genre</a></li>
-                <li><a href="theaters.html">Theaters Nearby</a></li>
-                <li><a href="upcoming.html">Coming Soon</a></li>
-            </ul>
-        </nav>
-    </div>
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="trending.html">Trending Movies</a></li>
-        <li><a href="genre.html">Movies by Genre</a></li>
-        <li><a href="theaters.html">Theaters Nearby</a></li>
-        <li><a href="comingSoon.html">Coming Soon</a></li>
-    </ul>
-</header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="./assets/css/trending-style.css">
+        <title>Trending Movies</title>
+    </head>
 
-<body>
-    <a href="movie.html"></a>
     <header>
-        <form id="form">
-            <input type="text" placeholder=" Search Movie" id="search" class=search>
-        </form>
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="index.html" class="brand-logo">The Movie HUB</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="trending.html">Trending Movies</a></li>
+                    <li><a href="genre.html">Movies by Genre</a></li>
+                    <li><a href="theaters.html">Theaters Nearby</a></li>
+                    <li><a href="upcoming.html">Coming Soon</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trending.html">Trending Movies</a></li>
+            <li><a href="genre.html">Movies by Genre</a></li>
+            <li><a href="theaters.html">Theaters Nearby</a></li>
+            <li><a href="upcoming.html">Coming Soon</a></li>
+        </ul>
     </header>
 
-    <main id="main">
-        <div class="movie">
-            <img src="assests_trending/trending_images/popcorn-assortment-red-background.jpg" alt="image">
+    <body>
+        <a href="movie.html"></a>
+        <header>
+            <form id="form">
+                <input type="text" placeholder=" Search Movie" id="search" class=search>
+            </form>
+        </header>
 
-
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <button id="overview"></button>
-                <span class="green">9.8</span>
+        <main id="main">
+            <div class="movie">
+                <img src="./assets/images/popcorn-assortment-red-background.jpeg.icloud" alt="image">
+                <div class="movie-info">
+                    <h3>Movie Title</h3>
+                    <button id="overview"></button>
+                    <span class="green">9.8</span>
+                </div>
             </div>
+
+            <div class="movie">
+                <img src="./assets/images/popcorn-assortment-red-background.jpeg.icloud" alt="image">
+                <div class="movie-info">
+                    <h3>Movie Title</h3>
+                    <button id="overview"></button>
+                    <span class="green">9.8</span>
+                </div>
+            </div>
+
+            <div class="movie">
+                <img src="./assets/images/popcorn-assortment-red-background.jpeg.icloud" alt="image">
+                <div class="movie-info">
+                    <h3>Movie Title</h3>
+                    <button id="overview"></button>
+                    <span class="green">9.8</span>
+                </div>
+            </div>
+        </main>
+
+        <div class="pagination">
+            <div class="page" id="prev">Previous Page</div>
+            <div class="page" id="curr">1</div>
+            <div class="page" id="next">Next Page</div>
         </div>
 
-
-        <div class="movie">
-            <img src="assests_trending/trending_images/popcorn-assortment-red-background.jpg" alt="image">
-
-
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <button id="overview"></button>
-                <span class="green">9.8</span>
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="assests_trending/trending_images/popcorn-assortment-red-background.jpg" alt="image">
-
-
-
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <button id="overview"></button>
-                <span class="green">9.8</span>
-            </div>
-        </div>
-    </main>
-
-    <div class="pagination">
-        <div class="page" id="prev">Previous Page</div>
-        <div class="page" id="curr">1</div>
-        <div class="page" id="next">Next Page</div>
-    </div>
-
-
-    <script src="assests_trending/trending_js/trending.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
+        <footer>
+            <h5>❤️ Made with love by Anju, Hugh, Roy and Virginia.</h5>
+        </footer>
+            
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/js/trending.js"></script>
+        
+    </body>
 
 </html>

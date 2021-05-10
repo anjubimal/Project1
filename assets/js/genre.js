@@ -37,7 +37,6 @@ var targetHandler = function(event) {
 };
 
 function getMovieList(genreID) {
-  console.log("searching for id: " + genreID);
   // use this url to gather list given genre ID when user clicks nav bar
   var apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY 
                   + "&language=en-US&sort_by=popularity.desc&include_adult=true&with_genres=" + genreID;
@@ -50,6 +49,7 @@ function getMovieList(genreID) {
       }
     })
     .catch(function(error) {
+      window.location.href = "error.html";
     });
 };
 
@@ -85,5 +85,8 @@ function displayMovieList(movies) {
       movieElement.innerHTML = movieTemplate;
       return movieElement;
 }
+
+const slide_menu = document.querySelector(".sidenav");
+M.Sidenav.init(slide_menu,{});
 
 pickedGenre.addEventListener("click", targetHandler);

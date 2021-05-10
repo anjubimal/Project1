@@ -1,12 +1,12 @@
-
 const API_KEY = '4b52b8d4864cf35092c3095fb398a5e0';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const IMG_URL = 'https://image.tmdb.org/t/p/original'; /*https://image.tmdb.org/t/p/w500/xGuOF1T3WmPsAcQEQJfnG7Ud9f8.jpg*/
+const IMG_URL = 'https://image.tmdb.org/t/p/original';
 const qURL = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=' + API_KEY;
 
 $(document).ready(() => {
 	getMovies(qURL);
 });
+
 function getMovies(qURL) {
 	axios.get(qURL)
 		.then(response => {
@@ -23,17 +23,16 @@ function getMovies(qURL) {
 					</div>
 				</div>
 				`
-				console.log(`${movie.title}`);
-				console.log(`${movie.title}`);
 
 			});
 			$('#movies').html(output);
-			console.log(movies);
 
-		}
-		);
+		});
 }
 
 function movieSelected(id) {
 	// sessionStorage.setItem)
 }
+
+const slide_menu = document.querySelector(".sidenav");
+M.Sidenav.init(slide_menu,{});

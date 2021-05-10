@@ -1,15 +1,17 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
   
-  body {
-    font-family: Helvetica, Arial, sans-serif;
-  }
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(22,18,24,1) 100%);
+}
 
 .container {
-    padding: 5%;
+  padding: 5%;
 }
 
 .logo {
@@ -20,174 +22,178 @@
   padding: 0;
 }
 
-.hero {
-    align-items: flex-start;
-    background-image: url("../images/cinema_2.jpg");
-    display: flex;
-    background-size: cover;
-    background-position: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-attachment: fixed;
-    background-position: 80%;
-  
-  }
-
-  .hero-cta {
-    width: 100%;
-    text-align: center;
-    margin: 3.5%;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.2;
-  }
-
-  .hero-cta h2 {
-    font-style: italic;
-    font-size: 5vw;
-    color: white;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  }
-
-  .hero-form {
-    text-align: center;
-    border: solid 3px rgb(6, 6, 83);;
-    background-color: rgba(5, 56, 52, 0.8);
-    padding: 20px;
-    color:white;
-    margin-left: 25%;
-    margin-right: 25%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);border-radius: 15px;
-    margin-top: 5%;
-  }
-
-  .search-box {
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    border: solid 3px rgb(6, 6, 83);;
-    background-color: rgba(159, 192, 10, 0.5);
-    color:white;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);border-radius: 15px;
-    margin-top: 5%;
-    text-align: center;
-    margin-bottom: 10%;
-    border-style: dotted;
-  }
-
-  .max-width {
-    width: 300px;
-  }
-
-  .hero-form input {
-    
-    border: 1px solid rgb(6, 6, 83);
-    display: block;
-    padding: 7px 15px;
-    font-size: 16px;
-    font-weight: bolder;
-    color: rgb(6, 6, 83);;
-    width: 100%;
-    margin-bottom: 15px;
-    background-color: rgba(255,255,255, 0.75);
-  }
-  
- .hero-form input:focus {
-      background-color: rgba(255,255,255, 1);
-      outline: none;
-    }
-  
- .hero-form label {
-    margin: 0 5px;
-  }
-
-  .hero-cta p {
-    font-size: 3vw;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  }
-  .smaller {
-      margin-left: 10%;
-      margin-right: 10%;
-      margin-bottom: 15%;
-  }
-.margin-card {
-    margin-left: 15px;  
-    margin-right: 15px; 
-    margin-bottom: 30px; 
+nav ul li a:hover {
+	color: white;
+  background-color: rgb(0, 76, 239);
+  text-decoration: none;
 }
+
+.hero {
+  align-items: flex-start;
+  background-image: url("../images/cinema_2.jpg");
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-attachment: fixed;
+}
+
+.hero-cta {
+  width: 100%;
+  text-align: center;
+  margin: 3.5%;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.hero-cta h2 {
+  font-style: italic;
+  font-size: 5vw;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-form {
+  text-align: center;
+  border: solid 3px rgb(6, 6, 83);;
+  background-color: rgba(5, 56, 52, 0.8);
+  padding: 20px;
+  color:white;
+  margin-left: 25%;
+  margin-right: 25%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);border-radius: 15px;
+  margin-top: 5%;
+}
+
+.search-box {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 3px rgb(6, 6, 83);;
+  background-color: rgba(159, 192, 10, 0.5);
+  color:white;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);border-radius: 15px;
+  margin-top: 5%;
+  text-align: center;
+  margin-bottom: 10%;
+  border-style: dotted;
+}
+
+.max-width {
+  width: 300px;
+}
+
+.hero-form input {  
+  border: 1px solid rgb(6, 6, 83);
+  display: block;
+  padding: 7px 15px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: rgb(6, 6, 83);;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: rgba(255,255,255, 0.75);
+}
+  
+.hero-form input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+}
+
+.hero-form label {
+  margin: 0 5px;
+}
+
+.hero-cta p {
+  font-size: 3vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.smaller {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 15%;
+}
+
+.margin-card {
+  margin-left: 15px;  
+  margin-right: 15px; 
+  margin-bottom: 30px; 
+}
+
 .centered {
-    color: white;
-    font-style: italic;
-    font-size: 2vw;
-    font-weight: bolder;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  }
+  color: white;
+  font-style: italic;
+  font-size: 2vw;
+  font-weight: bolder;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
 
-  .card-text {
-    font-size: 1vw;
-    font-weight: normal;
-  }
+.card-text {
+  font-size: 1vw;
+  font-weight: normal;
+}
 
-  .hide-button {
-    background-color: transparent;
-    border: none;
-    width: 100%;
-    height: 50px;
-  }
+.hide-button {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 50px;
+}
 
 .list {
-    display: inline-flex;
-    height: 100%;
-    margin: 50px;
+  display: inline-flex;
+  height: 100%;
+  margin: 50px;
 }
 
- div h4 {
-     font-size: 5vw;
-     text-align: center;
-     color: white;
-     font-weight: bolder;
- }
-
- div h5 {
-     font-size: 3vw;
-     text-align: justify;
-    color: white;
-
- }
-
- .big-box {
-   margin: auto;
-   align-self: center;
-   width: 80%;
-   height: 500px;
+div h4 {
+  font-size: 5vw;
   text-align: center;
+  color: white;
+  font-weight: bolder;
+}
 
- }
+div h5 {
+  font-size: 3vw;
+  text-align: justify;
+  color: white;
+}
 
- .big-box p {
-   margin-top: 105px;
-   padding: 20px;
-   
- }
-
- .input {
-     margin-left: 75px;
-     margin-top:25px;
-     padding: 10px;
-     background-color: rgba(80, 148, 212, 0.8);
-     border-radius: 10px;
- }
-
- footer h5 {
-   height: 10%;
-     font-size: 1.5vw;
+.big-box {
+  margin: auto;
+  align-self: center;
+  width: 80%;
+  height: 500px;
   text-align: center;
-   width: 100%;
- }
+}
+
+.big-box p {
+  margin-top: 105px;
+  padding: 20px;  
+}
+
+.input {
+  margin-left: 75px;
+  margin-top:25px;
+  padding: 10px;
+  background-color: rgba(80, 148, 212, 0.8);
+  border-radius: 10px;
+}
+
+footer h5 {
+  height: 10%;
+  font-size: 1.5vw;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
