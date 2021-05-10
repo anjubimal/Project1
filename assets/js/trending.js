@@ -21,7 +21,6 @@ M.Sidenav.init(slide_menu,{});
 getMovies(API_URL)
 
 function getMovies(url) {
-    console.log("in get movies")
     lastUrl = url;
     fetch(url).then(res => res.json()).then(data => {
         showMovies(data.results);
@@ -74,7 +73,6 @@ function overview(id) {
 };
 
 function getMovie() {
-    console.log("in getmovie");
     let movieId = sessionStorage.getItem('movieId');
     searchID = `${BASE_URL}/movie/${movieId}?${API_KEY}&append_to_response=videos`
     fetch(searchID).then(res => res.json()).then(data => {
