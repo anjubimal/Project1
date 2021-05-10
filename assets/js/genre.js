@@ -65,7 +65,7 @@ function getMovieDetails(movieId) {
 
     const overviewTemplate = `
     <div class="movie">
-      <h1 class="movie-title">${data.original_title}</h1>
+      <h1 class="movie-title">${data.title}</h1>
       <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="${data.title}">
       <p class="description">${data.overview}</p>
     </div>`;
