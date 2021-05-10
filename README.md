@@ -28,9 +28,6 @@ Windhoek, Rundu, Walvis Bay, Oshakati, Swakopmund, Katima Mulilo, Grootfontein. 
 <img width="1440" alt="Screen Shot 2021-05-08 at 8 14 48 PM" src="https://user-images.githubusercontent.com/43347674/117556761-452b7600-b03a-11eb-8dfd-07bda99f5788.png">
 <img width="1440" alt="Screen Shot 2021-05-08 at 8 24 24 PM" src="https://user-images.githubusercontent.com/43347674/117556868-76f10c80-b03b-11eb-8e94-83c2cc0be583.png">
 
-## Screenshot
-![project screenshot](assets/images/upcoming.PNG)
-
 # Links:
 
 Repo: https://github.com/anjubimal/Project1
