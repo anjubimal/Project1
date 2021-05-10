@@ -33,7 +33,8 @@ var targetHandler = function(event) {
   event.preventDefault();
   if (event.target.id) {
     getMovieList(event.target.id);
-  } 
+  }
+    console.log(event.target.id);
 };
 
 function getMovieList(genreID) {
@@ -46,11 +47,34 @@ function getMovieList(genreID) {
       if (response.ok) {
         response.json().then(renderMovies);
       } else {
+        window.location.href = "error.html";
       }
     })
     .catch(function(error) {
       window.location.href = "error.html";
     });
+};
+
+function getMovieDetails(movieId) {
+  searchID = BASE_URL + '/movie/' + movieId + '?api_key=' + API_KEY + '&language=en-US';
+  fetch(searchID).then(res => res.json()).then(data => {
+    main.innerHTML='';
+
+    const overviewElement = document.createElement('div');
+    overviewElement.setAttribute('class', 'movie-card');
+
+    const overviewTemplate = `
+    <div class="movie">
+      <h1 class="movie-title">${data.title}</h1>
+      <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" alt="${data.title}">
+      <p class="description">${data.overview}</p>
+    </div>`;
+    
+    overviewElement.innerHTML = overviewTemplate;
+    main.appendChild(overviewElement);
+  });
+
+  main.appendChild(output);
 };
 
 function renderMovies(data) {
@@ -64,7 +88,7 @@ function movieSection(movies) {
   return movies.map((movie) => {
     if (movie.poster_path) {
       return `
-          <img class="zoom" src=${IMG_URL + movie.poster_path} data-movie-id=${movie.id}/>
+          <a onclick="getMovieDetails(${movie.id})"><img class="zoom" src=${IMG_URL + movie.poster_path} id=${movie.id}/></a>
       `;
     }
   }) 
