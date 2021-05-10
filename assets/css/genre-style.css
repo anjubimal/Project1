@@ -81,6 +81,18 @@ nav ul li a:hover {
   margin: 2rem;
 }
 
+.movie-card {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.movie img {
+  width: auto;
+  margin: 2rem;
+  align-self: center;
+}
+
 footer h5 {
   height: 10%;
   font-size: 1.5vw;
